@@ -66,7 +66,7 @@
 ### 2.1 Create-react-app으로 만들기
 <br>
 
-
+![리액트만들기](리액트_create-react-app.png)
 
 ## 2024-03-13 React 2주차 강의 내용
 <br>
