@@ -67,6 +67,15 @@
 <br>
 
 ![리액트만들기](리액트_create-react-app.png)
+<br>
+
+#### 위에 사진 치고 .gitignore에서 터미널 열고 npm start   
+<br>
+
+
+---------
+
+###
 
 ## 2024-03-13 React 2주차 강의 내용
 <br>
