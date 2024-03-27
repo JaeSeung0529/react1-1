@@ -8,8 +8,67 @@
 <br>
 
 ### 3.1 JSX(JavaScript XML)란?
+----
 * #### javascript에 XML을 추가한 확장 문법.
 <br>
+
+### 3.2 JSX의 역할
+----
+<br>
+
+* #### JSX느 내부적으로 XML/HTML 코드를 자바스크립트로 변환.
+* #### REACTrk createElement함수를 사용하여 자동으로 자바스크립트로 변환.
+* #### 만일 JS작업할 경우 직접 createElement함수를 사용해야 합니다.
+* #### JSX는 가독성을 높여 주는 역할
+<br>
+
+### 3.3 JSX의 장점
+----
+<br>
+
+### 3.4 JSX 사용법
+----
+<br>
+
+* #### 모든 자바스크립트 문법을 지원
+* #### 자바스크립트 문법에 XML과 HTML을 섞어서 사용
+* #### 만일 HTML이나 xml에 자바스크립트 코드를 사용하고 싶으면 {}괄호를 사용합니다.
+<br>
+    
+    const element = <h1>안녕,[name]</h1>
+
+<br>
+
+### 3.5 JSX 실습
+----
+<br>
+Book.jsx 
+
+    import React from "react";
+
+    export default function Book(props){
+        return(
+            <div>
+                <h1>{`이 책의 이름은 ${props.name}입니다.`}</h1>
+                <h2>{`이 책은 총 ${props.numOfPage}페이지로 미뤄져 있습니다.`}</h2>
+            </div>
+        );
+    }
+<br>
+Library.jsx 
+
+    import React from "react";
+    import Book  from "./Book";
+
+    export default function Library(props){
+        return(
+            <div>
+            <Book name="처음 만난 파이썬" numOfPage={300}/>
+            <Book name="처음 만난 AWS" numOfPage={400}/>
+            <Book name="처음 만난 리액트" numOfPage={500}/>
+            </div>
+        )
+    }
 
 
 
