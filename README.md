@@ -1,10 +1,22 @@
 # 정재승 202230233  
 <br>
 
+## 2024-03-27 React 4주차 강의 내용
+<br>
+
+## chapter 3. JSX 소개
+<br>
+
+### 3.1 JSX(JavaScript XML)란?
+* #### javascript에 XML을 추가한 확장 문법.
+<br>
+
+
+
 ## 2024-03-20 React 3주차 강의 내용  
 <br>
 
-## Chapter 1.리액트 
+## Chapter 1. 리액트 
 
 ### 1.1 리액트는 무엇인가?
 ----
