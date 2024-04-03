@@ -1,6 +1,8 @@
 # 정재승 202230233  
 <br>
 
+### 참고자료:https://github.com/soaple/first-met-react-practice-v18
+
 ## 2024-04-03 React 5주차 강의 내용
 <br>
 
@@ -94,15 +96,204 @@
 ![Alt text](image-9.png)
 <br>
 
+### * 실습 *
+Welcome.jsx 생성
+![Alt text](image-10.png)
+---
+<br>
+
 
 ### 5.4 컴포넌트 합성
 <br>
 
-### 5.5 컴포넌트 추출
+* #### 멐포넌트 합성은 여러개의 컴포넌트를 합쳐서 하나의 컴포넌트를 만드는 것이다.
+* #### 리액트에서는 컴포넌트 안에 또다른 컴포넌트를 사용할 수 있기 때문에, 복잡한 화면을 여러개의 컴포넌트로 나누어 구현 할 수 있다.
+* #### 다음 코드에서는 props의 값을 다르게 해서 Welcome 컴포넌트를 여러번 사용한다.
+![Alt text](image-11.png)
+---
 <br>
+
+
+### 5.5 컴포넌트 추출
+---
+<br>
+
+* #### 복잡한 컴포넌트를 쪼개서 여러개의 컴포넌트로 나눌 수 있다.
+* #### 큰 컴포넌트에서 일부를 추출해서 새로운 컴포넌트를 만드는 것이다.
+* #### 실무에서는 처음부터 1개의 컴포넌트에 하나의 기능만 사용하도록 설계하는 것이 좋습니다.
+
+* #### Comment는 댓글 표시 검포넌트이다.
+* #### 내부에는 이미지, 이름 ,댓글과 작성일이 포함되어있다.
+* #### 첫번째로 이미지 부분을 Avatar 컴포넌트로 출력해 보았다.
+![Alt text](image-12.png)
+![Alt text](image-13.png)
+---
+<br>
+
+* #### 두번 째로 사용자 정보 부분을 추출한다.
+* #### 컴포넌트 이름은 UserInfo로 한다. React 컴포넌트 이름은 Camel notatio을 사용한다
+* #### UserInfo 안에 Avatar 컴포넌트를 넣어서 완성시킨다.
+![Alt text](image-14.png)
+---
+<br>
+
+* #### 추출 후 다시 결합한 UserInfo를 Comment 컴포넌트 반영하면 다음과 같은 모습이 된다.
+* #### 처음에 비해서 가독성이 높아진 것을 확인할 수 있다.
+![Alt text](image-15.png)
+<br>
+
 
 ### 5.6 댓글 컴포넌트 만들기
 <br>
+
+#### Comment.jsx
+```
+const styles = {
+    wrapper: {
+        margin: 8,
+        padding: 8,
+        display: "flex",
+        flexDirection: "row",
+        border: "1px solid grey",
+        borderRadius: 16,
+    },
+    imageContainer: {},
+    image: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+    },
+    contentContainer: {
+        marginLeft: 8,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+    },
+    nameText: {
+        color: "black",
+        fontSize: 16,
+        fontWeight: "bold",
+    },
+    commentText: {
+        color: "black",
+        fontSize: 16,
+    },
+};
+
+export default function Comment (props) {
+    return ( <div style = {styles.wrapper}>
+        <div style={StyleSheet.imageContainer}>
+            <img
+            src = "data:image/png;base64,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"
+            style = {styles.image}
+            /> 
+            </div>
+
+            <div style={styles.contentContainer}>
+                <span style ={styles.nameText}>{props.name}</span>
+                <span style={styles.commentText}>{props.comment}</span>
+            </div>
+        </div>
+    
+
+       ) 
+    };
+        
+```
+#### CommentList.jsx
+```
+import Comment from "./Comment";
+
+export default function CommentList (props){
+    return(
+        <div>
+            <Comment name = "홍길동" comment="안녕하세요"/>
+            <Comment name = "홍길동" comment="안녕하세요!"/>
+            <Comment name = "홍길동" comment="안녕하세요!!"/>
+        </div>
+    )
+}
+
+```
+#### index.js
+```
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+// import Hello from './Hello'
+
+import Clock from './chapter04/Clock';
+import Library from './chapter03/Library';
+import Welcome from './chapter05/Welcome';
+import CommentList from './chapter05/CommentList'
+import Comment from './chapter05/Comment'
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+root.render(  
+  <React.StrictMode>
+      <CommentList />
+   </React.StrictMode>
+  ); 
+  ```
+  <br>
+
+## Chapter 6. state의 생명주기
+---
+<br>
+
+### 6.1 state
+1. #### State란?
+* #### state는 리액트 컴포넌트의 상태를 의미한다
+* #### 상ㅌ애ㅢ 의미는 정상인지 비정상인지가 아니라 컴포넌트의 데이터를 의미
+* #### 정확히는 컴포넌트의 변경가능한 데이터를 의미한다.
+* #### State가 변하면 다시 렌더링이 되기 때문에 랜더링과 관련된 값만 state에 포합시켜야 한다.
+
+2. #### state의 특징
+* #### 리액트 만의 특별한 형태가 아닌 단지 자바스크립트 객체일 뿐이다.
+* #### 예의 LikeButton은 class 컴포넌트이다. 
+* #### constructor는 생성자이고 그 안에 있는 this.state가 현 컴포넌트의 state이다.
+![Alt text](image-16.png)
+---
+<br>
+
+* #### state는 변경은 가능하다고 했지만 직접 수정해서는 안된다.
+* #### 불가능 하다고 생각하는 것이 좋다.
+* #### state를 변경하고자 할 때는 setstate()함수를 사용한다.
+![Alt text](image-17.png)
+---
+<br>
+
+![Alt text](image-18.png)
+---
+<br>
+
+### 6.2 생명주기에 대해 알아보기
+<br>
+
+* #### 생명주기는 컴포넌트의 생성 시점, 사용 시점, 종료 시점을 나타내는 것이다.
+* #### constructor가 실행 되면서 컴포넌트가 생성된다.
+* #### 생성 직후 componentDidMount() 함수가 호출된다.
+* #### 컴포넌트가 소멸 하기 전까지 여러 번 랜더링 한다.
+* #### 랜더링은 props setState(), forceUpdate()에 의해 상태가 변경되면 이루어진다.
+* #### 그리고 랜더링이 끝나면 componentDidUpdate() 함수가 호출되낟.
+* #### 마지막으로 컴포넌트가 언마운트 되면 compomentWillUnMount() 함수가 호출된다.
+![Alt text](image-19.png)
+---
+<br>
+
+
+
+
+
+
+
+
+
+
 
 ## 2024-03-27 React 4주차 강의 내용
 <br>
