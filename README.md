@@ -3,6 +3,51 @@
 
 ### 참고자료:https://github.com/soaple/first-met-react-practice-v18
 
+## 2024-05-29 React 13주차 강의 내용
+<br>
+
+## chapter 11 태그
+
+### 11.3 textarea 태그 
+<br>
+
+* #### HTML에서는 textarea의 children으로 텍스트가 들어가는 형태이다.
+
+### 11.4 select 태그
+
+* #### select 태그도 textarea와 동일하다.
+![Alt text](image-35.png)
+----
+<br>
+
+### 11.5 File input 태그
+ 
+* #### File input 태그는 그 값이 읽기 전용이기 때문에 리액트에서는 비제어 컴포넌트가 된다.
+![Alt text](image-36.png)
+----
+<br>
+
+### 11.6 여러 개의 입력 다루기
+![Alt text](image-37.png)
+----
+<br>
+
+### 11.7 Input Null Value
+
+* #### 제어 컴포넌트에 value prop을 정해진 값으로 넣으면 코드를 수정하지 않는 한 입력값을 바꿀 수 없다.
+* #### 만약 value prop은 넣되 자유롭게 입력할 수 있게 만들고 싶다면 값이 UNDEFINED 또는 NULL을 넣어 주면 된다.
+![Alt text](image-38.png)
+----
+<br>
+
+### 11.8 (실습) 사용자 정보 입력받기
+![Alt text](image-39.png)
+----
+<br>
+
+
+
+
 ## 2024-05-22 React 12주차 강의 내용
 <br>
 
