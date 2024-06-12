@@ -6,7 +6,84 @@
 ## 2024-06-06 Reach 15주차 강의 내용
 <br>
 
-### 
+## Chapter 15. 스타일링
+<br>
+
+### 15.1 css
+
+### 1. css란?
+* #### CSS는 Cascading style Sheets의 약자로 스타일링을 위한 언어
+* #### Cascading이란 계단식이라는 뜻으로 한 엘리먼트에 여러 스타일이 적용될 경우 스타일간의 충돌을 막기 위해 계단식으로 스타일을 적용시키는 규칙을 갖고 있다
+* #### 즉 하나의 스타일이 여러 개의 엘리먼트에 적용될 수도 있고, 하나의 엘리먼트에도 여러 개의 스타일이 적용될 수도 있다.
+* #### 엘리먼트에 스타일이 적용되는 규칙을 selector(선택자)라고 한다. CSS는 이 선택자와 스타일로 이루어 진다.
+<br>
+
+### 2.CSS 문법과 선택자
+* #### 선택자를 먼저 쓰고 다음에 적용할 스타일을 중괄호 안에 세미콜론으로 구분하여 하나씩 작성한다.
+* #### 선택자는 HTML 엘리먼트를 직접 넣어도 되고, 엘리먼트의 조합 혹은 class의 형태로 작성 가능하다
+* #### 스타일은 property(속성)과 key value(키 값)로 이루어지며, 이들은 콜론(:)으로구분한다
+* #### class 선택자. HTML 태그로 특정할 수 없는 스타일은 모드 class로 정의 한다.
+```
+   <span class="medium">
+        ...
+    </span>
+
+   <p class="medium">
+        ....
+    </p>
+
+   .medium{
+    font-size: 20px;
+    }
+   p.medium{
+    font-size: 20px;
+    }
+```
+* #### 그룹 선택자.
+* #### 상태 선택자.
+<br>
+
+### 3.레이아웃과 관련된 속성
+* #### 화면에 엘리먼트를 어떻게 배치할 것인지를 정의 한다.
+* #### 가장 중요한 속성은 display이다.
+* #### 모든 엘리먼트는 기본 display 속성을 갖고 있지만 이 기본값을 변경해 줄 수 있다.
+```
+    div{
+        display: none | block | inline | flex;
+    }
+```
+* #### none는 존재는 하지만 화면에 보이지 않는 것, 자바스크립트를 넣을 때 많이 사용한다.
+* #### block은 세로로 정렬되며, with의 heigh를 갖을 수 잇다. 크기와 상관없이 한 줄을 점유한다,.
+* #### inline은 가로로 정렬되며, with의 heigh를 갖을 수 없다. 컨텐츠의 크기만큼 공간을 점유한다.
+* #### inline-block는 기본적으로 inline의 특성을 갖지만, with와 height 등 block의 특성을 사용할 수 있다.
+* #### 대표적인 block과 inline 태그는 다음과 같다.
+- ```Block: <div><table><h1>-<h6><p><form><ul>```
+* #### visbility 속성은 엘리먼트의 가시성을 정의한다.
+``` 
+div{
+    visiblity: visible | hidden;
+}
+```
+* #### 여기서 중요한 것은 display:none과 visibility:hidden의 차이이다.
+* #### display:none은 엘리먼트의 영역이 보이지 않고, visibility:hidden는 차지하는 영역은 보인다.
+
+### 15.2 styled-components
+* #### CSS 문법을 그대로 사용하면서 결과물을 스타일링된 컴포넌트 형태로 만들어 주는 오픈소스 라이브러리.
+
+1. #### styled-components 설치 
+* ##### npm install styled-components
+<br>
+
+2. #### styled-components 기본 사용법
+* ##### 태그드 템플릿 리터럴을 사용하여 구성 요소의 스타일을 지정한다.
+<br>
+
+3. #### styled-comonents의 props 사용하기 
+![Alt text](image-48.png)
+<br>
+
+4. #### styled-components 확장하기
+![Alt text](image-49.png)
 
 ## 2024-06-05 React 14주차 강의 내용
 <br> 
